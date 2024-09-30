@@ -1,0 +1,154 @@
+<div class="featured-tours">
+    <h2>Featured Tours</h2>
+    <div id="tours-container" class="tours-container"></div>
+    <button class="see-all-btn">See All Tours</button>
+</div>
+
+<script src="./scripts.js"></script>
+<link rel="stylesheet" href="/style.css">
+
+<style>
+.featured-tours {
+    text-align: center;
+    padding: 1rem;
+}
+
+.tours-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tour-card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.tour-card:hover {
+    transform: scale(1.05);
+}
+
+.tour-card img {
+    width: 100%;
+    height: auto;
+}
+
+.price-tag {
+    position: absolute;
+    bottom: 12rem;
+    left: 0;
+    background-color: rgb(94, 218, 94);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.tour-info {
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+}
+
+.rate-and-reviews {
+    display: flex;
+    align-items: center;
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 12.5rem;
+    margin-right: 1rem;
+}
+
+.reviews {
+    font-size: 1rem;
+    color: #999;
+}
+
+.days-duration {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.calendar-icon {
+    margin-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.see-all-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .tours-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .price-tag {
+        bottom: 10rem;
+        font-size: 1.2rem;
+    }
+
+    .days-duration {
+        font-size: 0.9rem;
+    }
+
+    .tour-info {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tours-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .price-tag {
+        bottom: 8rem;
+        font-size: 1.1rem;
+    }
+
+    .days-duration {
+        font-size: 0.8rem;
+    }
+
+    .tour-info {
+        padding: 0.5rem;
+        height: auto;
+    }
+}
+
+</style>
